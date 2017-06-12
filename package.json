@@ -1,0 +1,43 @@
+{
+  "name": "ier",
+  "version": "1.0.0",
+  "description": "International Economic Relations Faculty",
+  "main": "build/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-image": "^2.9.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-zip": "^4.0.0",
+    "rimraf": "^2.6.1",
+    "vinyl-ftp": "^0.6.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-image": "^2.9.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-zip": "^4.0.0",
+    "rimraf": "^2.6.1",
+    "vinyl-ftp": "^0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoncoLab/ier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoncoLab/ier/issues"
+  },
+  "homepage": "https://github.com/JoncoLab/ier#readme"
+}
