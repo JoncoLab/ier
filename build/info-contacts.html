@@ -5,6 +5,59 @@
     <title>Title</title>
 </head>
 <body>
+<section class="schedule">
 
+</section>
+<button class="up-button"></button>
+<header>
+    <img class="logo" src="#" alt="logo">
+    <nav class="main-menu">
+        <ul>
+            <li><a href="#">Новини</a></li>
+            <li><a href="#">Матеріали</a></li>
+            <li>
+                <span>Інфо</span>
+                <img src="SVG/#">
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+<section class="feedback">
+    <form id="feedback-form" action="sripts/php/feedback.php" method="post">
+        <fieldset>
+            <legend>З'вязатися з адміністрацією</legend>
+            <label for="name">Ваше ім'я та прізвище</label>
+            <input id="name" type="text" name="name" autofocus required placeholder="Ваше ім'я та прізвище">
+            <label for="email">Ваша контактна електронна пошта</label>
+            <input id="email" type="email" name="email" required placeholder="example: @ier.com">
+            <label for="message">Ваше повідомлення</label>
+            <textarea rows="" cols="" id="message" required></textarea>
+        </fieldset>
+        <fieldset class="buttons">
+            <label for="submit">Надіслати</label>
+            <input type="submit" id="submit">
+            <label for="reset">Очистити</label>
+            <input type="reset" id="reset">
+        </fieldset>
+    </form>
+</section>
+</main>
+<footer>
+    <table class="contacts">
+    </table>
+    <div class="developers">
+        <span>Сайт розроблено</span>
+        <a href="#">Семен Вербич</a>
+        <a href="#">Максим Печко</a>
+    </div>
+    <img class="logo" src="#" alt="logo">
+</footer>
 </body>
 </html>
