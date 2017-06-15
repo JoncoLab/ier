@@ -3,5 +3,12 @@
 #up-button {
   position: fixed;
   bottom: $line * 10;
-  left: $line / 2;
+  right: $line / 2;
+  font: {
+    size: $line * 2;
+    weight: bold;
+  }
+  border: {
+    radius: 50%;
+  }
 }
