@@ -3,3 +3,97 @@
 #up-button {
   @include button($darkYellow);
 }
+
+header {
+  padding: $line / 2;
+  display: flex;
+  align-items: flex-end;
+
+  .logo {
+    height: $line * 15;
+  }
+
+  .main-menu {
+    height: $line * 3;
+    flex-grow: 1;
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      height: 100%;
+
+      li {
+        padding: 0 $line / 2;
+        display: flex;
+        margin: 0 $line * 2;
+        transition: {
+          duration: $time;
+        }
+
+        .drop-down-menu {
+          display: none;
+        }
+
+        a,
+        span {
+          flex-grow: 1;
+          color: $darkBlue;
+          text: {
+            align: center;
+            decoration: none;
+          }
+          font: {
+            weight: bold;
+            size: $line * 2;
+          }
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: {
+            duration: $time;
+          }
+        }
+
+        &.drop-down {
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            display: block;
+            content: '';
+            border: $line * 1.5 solid transparent;
+            border: {
+              left-color: transparent;
+              right-color: transparent;
+              bottom: none;
+            }
+            position: absolute;
+            top: 100%;
+            left: 38%;
+            transition: {
+              duration: $time;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 $line / 5 0 0 $darkGreen;
+
+          &::after {
+            border: {
+              top-color: $darkGreen;
+            }
+          }
+
+          a,
+          span {
+            color: $darkGreen;
+          }
+        }
+      }
+    }
+  }
+}
