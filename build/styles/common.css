@@ -1,13 +1,46 @@
 #up-button
 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 
     position: fixed;
     right: 5px;
     bottom: 100px;
 
-    -webkit-border-radius: 50%;
+    width: 50px;
+    height: 50px;
 
+    cursor: pointer; 
+    -webkit-transition-timing-function: linear; 
+       -moz-transition-timing-function: linear; 
+         -o-transition-timing-function: linear; 
+            transition-timing-function: linear;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transform: rotate(-90deg);
+       -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+         -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    text-align: center;
+
+    color: #00cd00;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ebec06;
+    border-top-color: #6da8d7;
+    border-right-color: #00cd00;
+    border-bottom-color: #6b39ff;
+    -webkit-border-radius: 50%;
             border-radius: 50%;
+    outline: none;
+    background-color: rgba(237, 203, 0, .3);
+}
+#up-button:hover
+{
+    background-color: rgba(237, 203, 0, .5);
+    -webkit-box-shadow: 0 0 0 5px rgba(237, 203, 0, .2);
+            box-shadow: 0 0 0 5px rgba(237, 203, 0, .2);
 }

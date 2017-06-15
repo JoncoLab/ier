@@ -1,4 +1,5 @@
 $line: 10px;
+$time: 0.3s;
 
 $blue: #6da8d7;
 $darkBlue: #6b39ff;
@@ -6,3 +7,45 @@ $darkGreen: #008700;
 $green: #00cd00;
 $yellow: #ebec06;
 $darkYellow: #edcb00;
+
+@mixin button($color: $darkYellow) {
+  width: $line * 5;
+  height: $line * 5;
+  position: fixed;
+  bottom: $line * 10;
+  right: $line / 2;
+  font: {
+    size: $line * 3;
+    weight: bold;
+  }
+  border: {
+    radius: 50%;
+    width: $line / 5;
+    style: solid;
+    color: $yellow;
+    top-color: $blue;
+    right-color: $green;
+    bottom-color: $darkBlue;
+  }
+  text: {
+    align: center;
+  }
+  color: $green;
+  outline: none;
+  transform: rotate(-90deg);
+  transition: {
+    duration: $time;
+    timing-function: linear;
+  }
+  background: {
+    color: transparentize($color, 0.7);
+  }
+  cursor: pointer;
+
+  &:hover {
+    background: {
+      color: transparentize($color, 0.5);
+    }
+    box-shadow: 0 0 0 $line / 2 transparentize($color, 0.8);
+  }
+}
