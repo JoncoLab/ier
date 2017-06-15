@@ -126,10 +126,6 @@ header .main-menu .menu li
 
             transition-duration: .3s;
 }
-header .main-menu .menu li .drop-down-menu
-{
-    display: none;
-}
 header .main-menu .menu li a,
 header .main-menu .menu li span
 {
@@ -202,6 +198,20 @@ header .main-menu .menu li.drop-down::after
     border-right-color: transparent;
     border-bottom: none;
     border-left-color: transparent;
+}
+header .main-menu .menu li.drop-down .drop-down-menu
+{
+    position: absolute;
+    z-index: 5;
+    top: 100%;
+    left: 0;
+
+    padding: 0;
+}
+header .main-menu .menu li.drop-down .drop-down-menu li
+{
+    width: auto;
+    margin: 0;
 }
 header .main-menu .menu li:hover
 {

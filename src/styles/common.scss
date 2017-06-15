@@ -33,10 +33,6 @@ header {
           duration: $time;
         }
 
-        .drop-down-menu {
-          display: none;
-        }
-
         a,
         span {
           flex-grow: 1;
@@ -75,6 +71,19 @@ header {
             left: 38%;
             transition: {
               duration: $time;
+            }
+          }
+
+          .drop-down-menu {
+            position: absolute;
+            top: 100%;
+            z-index: 5;
+            left: 0;
+            padding: 0;
+
+            li {
+              width: auto;
+              margin: 0;
             }
           }
         }
