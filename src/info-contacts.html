@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-
+<section class="feedback">
+    <form id="feedback-form" action="sripts/php/feedback.php" method="post">
+        <fieldset>
+            <legend>З'вязатися з адміністрацією</legend>
+            <label for="name">Ваше ім'я та прізвище</label>
+            <input id="name" type="text" name="name" autofocus required placeholder="Ваше ім'я та прізвище">
+            <label for="email">Ваша контактна електронна пошта</label>
+            <input id="email" type="email" name="email" required placeholder="example: @ier.com">
+            <label for="message">Ваше повідомлення</label>
+            <textarea rows="" cols="" id="message" required></textarea>
+        </fieldset>
+        <fieldset class="buttons">
+            <label for="submit">Надіслати</label>
+            <input type="submit" id="submit">
+            <label for="reset">Очистити</label>
+            <input type="reset" id="reset">
+        </fieldset>
+    </form>
+</section>
 </body>
 </html>
