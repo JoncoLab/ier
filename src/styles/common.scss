@@ -29,9 +29,10 @@ body {
       size: $line * 3;
     }
     transform: rotate(-90deg);
+    color: $green;
   }
 
-  > .schedule {
+  #schedule {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -99,11 +100,14 @@ body {
       height: $line * 15;
     }
 
-    .main-menu {
+    #main-menu {
       height: $line * 5;
       flex-grow: 1;
       border: {
         top: $line * 0.3 solid $darkYellow;
+      }
+      transition: {
+        duration: $time;
       }
 
       .menu {
@@ -200,6 +204,12 @@ body {
                 margin: 0;
                 list-style: none;
                 width: 100%;
+                border: {
+                  radius: $line;
+                }
+                background: {
+                  image: linear-gradient(to bottom, transparent 2px, white 2px, white);
+                }
               }
 
               .drop-down-menu-item {
@@ -212,11 +222,30 @@ body {
                   duration: $time;
                 }
 
+                &:first-of-type {
+                  border: {
+                    top: {
+                      right-radius: $line;
+                      left-radius: $line;
+                    }
+                  }
+                }
+
+                &:last-of-type {
+                  border: {
+                    bottom: {
+                      right-radius: $line;
+                      left-radius: $line;
+                    }
+                  }
+                }
+
                 a {
                   justify-content: flex-start;
                   font: {
                     size: $line * 1.5;
                   }
+                  padding: $line / 2;
                 }
 
                 &:hover {
@@ -251,6 +280,42 @@ body {
           }
         }
       }
+
+      &.fixed {
+        position: fixed;
+        top: 0;
+        right: 15%;
+        border: none;
+
+        .menu {
+          justify-content: space-between;
+          border: none;
+          background: white;
+          border: {
+            bottom: {
+              right-radius: $line;
+              left-radius: $line;
+            }
+          }
+
+          .menu-item {
+            margin: 0 $line / 5;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+
+    background: {
+      image: linear-gradient(to right, $green, $darkGreen);
+    }
+
+    .logo {
+      height: $line * 10;
     }
   }
 }
