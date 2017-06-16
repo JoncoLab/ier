@@ -11,16 +11,89 @@ body {
 body {
   #up-button {
     @include button($darkYellow);
+    position: fixed;
+    bottom: $line * 10;
+    right: $line / 2;
+    width: $line * 5;
+    height: $line * 5;
+    border: {
+      radius: 50%;
+      width: $line / 5;
+      style: solid;
+      color: $yellow;
+      top-color: $blue;
+      right-color: $green;
+      bottom-color: $darkBlue;
+    }
+    font: {
+      size: $line * 3;
+    }
+    transform: rotate(-90deg);
   }
 
   > .schedule {
-    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background: {
+      color: white;
+    }
+    z-index: 10;
+    transform: translateY(-100%);
+    transition: {
+      duration: $time * 3;
+    }
+
+    table {
+      border: {
+        collapse: collapse;
+      }
+      margin: $line;
+
+      tr {
+
+        th {
+          text: {
+            align: center;
+          }
+          padding: $line / 2;
+          background: transparentize($yellow, 0.5);
+        }
+
+        td {
+          background: {
+            color: transparentize($darkYellow, 0.9);
+          }
+          border: $line / 5 solid transparentize($yellow, 0.5);
+          padding: $line / 2;
+        }
+      }
+    }
+
+    &.show {
+      transform: none;
+    }
   }
 
   header {
     padding: $line / 2;
     display: flex;
     align-items: flex-end;
+
+    .show-schedule {
+      @include button($yellow);
+      position: absolute;
+      top: $line;
+      right: $line * 2;
+      padding: $line * 2;
+      border: {
+        radius: $line;
+      }
+      font: {
+        size: $line * 1.5;
+      }
+    }
 
     .logo {
       height: $line * 15;

@@ -9,30 +9,18 @@ $yellow: #ebec06;
 $darkYellow: #edcb00;
 
 @mixin button($color: $darkYellow) {
-  width: $line * 5;
-  height: $line * 5;
-  position: fixed;
-  bottom: $line * 10;
-  right: $line / 2;
   font: {
-    size: $line * 3;
     weight: bold;
   }
+  border: none;
   border: {
-    radius: 50%;
-    width: $line / 5;
-    style: solid;
-    color: $yellow;
-    top-color: $blue;
-    right-color: $green;
-    bottom-color: $darkBlue;
+    radius: $line;
   }
   text: {
     align: center;
   }
-  color: $green;
+  color: black;
   outline: none;
-  transform: rotate(-90deg);
   transition: {
     duration: $time;
     timing-function: linear;
