@@ -1,29 +1,35 @@
 @import "templates/variables";
 
-main {
-  display: flex;
-  justify-content: space-around;
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .contacts-table {
-
-  flex-grow: 2;
+  float: left;
+  margin-left: 0;
 
   table {
-    border: {
-      collapse: collapse;
-    }
+    border-collapse: collapse;
 
     caption {
-      border-top: 2px solid $darkYellow;
-      background: {
-        color: $yellow;
-      }
+      width:
       text-align: left;
       font: {
-       size: 20px;
+        size: $line * 2;
+        weight: bold;
       }
-      padding: $line 0;
+      padding: $line * 1.5 $line;
+      background: {
+        color: $darkYellow;
+      }
     }
 
     th,
@@ -31,26 +37,15 @@ main {
       padding: $line;
     }
 
-    td {
-      padding-left: $line;
-    }
-
     th {
       border: {
-        right: solid $darkYellow;
-        width: 3px;
-        radius: $line;
+        right: 2px solid $darkYellow;
       }
-      text-align: right;
     }
   }
 }
 
 .feedback {
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-   }
+  float: right;
 }
+
