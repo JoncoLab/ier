@@ -56,11 +56,17 @@ body {
       button {
         flex-basis: 15%;
         @include button($green);
+
+        &.current {
+          @include button($darkYellow);
+        }
       }
     }
 
     [class$="course"] {
-      display: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
 
       table {
         border: {
@@ -76,6 +82,7 @@ body {
             }
             padding: $line / 2;
             background: transparentize($yellow, 0.5);
+            border: $line / 2 solid white;
           }
 
           td {

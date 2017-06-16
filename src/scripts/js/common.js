@@ -6,6 +6,8 @@ var main = function () {
         navigationBarTop = navigationBar.getBoundingClientRect().top + window.pageYOffset,
         dropDownButton = $('#info'),
         schedule = $('#schedule'),
+        scheduleCourseButtons = schedule.find('nav button'),
+        scheduleItems = schedule.children('[class$="course"]'),
         showScheduleButton = $('header .show-schedule'),
         upButton = $('#up-button');
 
@@ -24,6 +26,22 @@ var main = function () {
 
     showScheduleButton.click(function () {
         schedule.toggleClass('show');
+        scheduleItems.hide();
+    });
+
+    scheduleCourseButtons.click(function () {
+        var button = $(this),
+            id = button.attr('id'),
+            target = schedule.children('.' + id);
+        scheduleCourseButtons.removeClass('current');
+        button.addClass('current');
+        scheduleItems.each(function () {
+            var current = $(this);
+            if (current.is(target) && current.css('display') == 'none') {
+                scheduleItems.slideUp(600);
+                current.slideDown(600);
+            }
+        });
     });
 
     upButton.click(function () {
