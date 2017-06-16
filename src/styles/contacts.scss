@@ -1,20 +1,67 @@
 @import "templates/variables";
 
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
 .contacts-table {
+
+  flex-grow: 2;
+
   table {
     border: {
       collapse: collapse;
     }
-    tr,
-    th {
+
+    caption {
+      text-align: left;
+      font: {
+       size: 20px;
+      }
+      padding: $line 0;
+    }
+
+    th,
+    tr {
       padding: $line;
+    }
+
+    tr {
+      text-align: left;
+    }
+
+    th {
       border: {
-        width: 1px;
-        style: solid;
+        right: solid;
+        width: 3px;
         color: black;
         radius: $line;
       }
-      text-align: center;
+      text-align: right;
     }
+  }
+}
+
+.feedback {
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+
+    label,
+    input {
+      padding: $line / 2;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      display: none;
+    }
+
+
+    }
+
   }
 }
