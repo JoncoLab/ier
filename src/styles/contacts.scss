@@ -15,6 +15,10 @@ main {
     }
 
     caption {
+      border-top: 2px solid $darkYellow;
+      background: {
+        color: $yellow;
+      }
       text-align: left;
       font: {
        size: 20px;
@@ -23,19 +27,18 @@ main {
     }
 
     th,
-    tr {
+    td {
       padding: $line;
     }
 
-    tr {
-      text-align: left;
+    td {
+      padding-left: $line;
     }
 
     th {
       border: {
-        right: solid;
+        right: solid $darkYellow;
         width: 3px;
-        color: black;
         radius: $line;
       }
       text-align: right;
@@ -49,19 +52,5 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-
-    label,
-    input {
-      padding: $line / 2;
-    }
-
-    input[type="submit"],
-    input[type="reset"] {
-      display: none;
-    }
-
-
-    }
-
-  }
+   }
 }
