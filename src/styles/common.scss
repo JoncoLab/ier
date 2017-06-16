@@ -36,7 +36,10 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    overflow: {
+      x: hidden;
+      y: scroll;
+    }
     background: {
       color: white;
     }
@@ -363,7 +366,7 @@ body {
   footer {
     display: flex;
     justify-content: space-between;
-
+    margin: $line / 2 0 0;
     background: {
       image: linear-gradient(to right, $green, $darkGreen);
     }
