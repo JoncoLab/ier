@@ -182,13 +182,13 @@ gulp.task('js:build', function () {
 //Збірка СSS
 gulp.task('css:build', function () {
     gulp.src(path.src.css)
+        .pipe(connectToFtp.newer(path.ftp.css))
         .pipe(compileSass().on('error', compileSass.logError))
         .pipe(cssComb())
         .pipe(autoPrefix({
             browsers: ['last 40 versions', '> 90%'],
             remove: false
         }))
-        .pipe(connectToFtp.newer(path.ftp.css))
         .pipe(connectToFtp.dest(path.ftp.css))
         .pipe(gulp.dest(path.build.css));
     gulp.src(path.admin.src.css)

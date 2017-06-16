@@ -26,10 +26,6 @@ var main = function () {
         schedule.toggleClass('show');
     });
 
-    schedule.click(function () {
-        schedule.removeClass('show');
-    });
-
     upButton.click(function () {
         var page = $('html, body');
         page.animate({
