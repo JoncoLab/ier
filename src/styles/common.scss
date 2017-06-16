@@ -1,105 +1,119 @@
 @import "templates/variables";
 
-#up-button {
-  @include button($darkYellow);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-header {
-  padding: $line / 2;
-  display: flex;
-  align-items: flex-end;
-
-  .logo {
-    height: $line * 15;
+body {
+  #up-button {
+    @include button($darkYellow);
   }
 
-  .main-menu {
-    height: $line * 3;
-    flex-grow: 1;
+  > .schedule {
+    display: none;
+  }
 
-    .menu {
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      height: 100%;
+  header {
+    padding: $line / 2;
+    display: flex;
+    align-items: flex-end;
 
-      li {
-        padding: 0 $line / 2;
+    .logo {
+      height: $line * 15;
+    }
+
+    .main-menu {
+      height: $line * 3;
+      flex-grow: 1;
+
+      .menu {
         display: flex;
-        margin: 0 $line * 2;
-        transition: {
-          duration: $time;
-        }
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: 100%;
 
-        a,
-        span {
-          flex-grow: 1;
-          color: $darkBlue;
-          text: {
-            align: center;
-            decoration: none;
-          }
-          font: {
-            weight: bold;
-            size: $line * 2;
-          }
+        .menu-item {
+          padding: 0 $line / 2;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          margin: 0 $line * 2;
           transition: {
             duration: $time;
           }
-        }
 
-        &.drop-down {
-          cursor: pointer;
-          position: relative;
-
-          &::after {
-            display: block;
-            content: '';
-            border: $line * 1.5 solid transparent;
-            border: {
-              left-color: transparent;
-              right-color: transparent;
-              bottom: none;
+          a,
+          span {
+            flex-grow: 1;
+            color: $darkBlue;
+            text: {
+              align: center;
+              decoration: none;
             }
-            position: absolute;
-            top: 100%;
-            left: 38%;
+            font: {
+              weight: bold;
+              size: $line * 2;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: {
               duration: $time;
             }
           }
 
-          .drop-down-menu {
-            position: absolute;
-            top: 100%;
-            z-index: 5;
-            left: 0;
-            padding: 0;
+          &.drop-down {
+            cursor: pointer;
+            position: relative;
 
-            li {
-              width: auto;
-              margin: 0;
+            &::after {
+              display: block;
+              content: '';
+              border: $line * 1.5 solid transparent;
+              border: {
+                left-color: transparent;
+                right-color: transparent;
+                bottom: none;
+              }
+              position: absolute;
+              top: 100%;
+              left: 38%;
+              transition: {
+                duration: $time;
+              }
+            }
+
+            .drop-down-menu {
+              position: absolute;
+              top: 100%;
+              z-index: 5;
+              left: 0;
+              padding: 0;
+
+              li {
+                width: auto;
+                margin: 0;
+              }
             }
           }
-        }
 
-        &:hover {
-          box-shadow: 0 $line / 5 0 0 $darkGreen;
+          &:hover {
+            box-shadow: 0 $line / 5 0 0 $darkGreen;
 
-          &::after {
-            border: {
-              top-color: $darkGreen;
+            &::after {
+              border: {
+                top-color: $darkGreen;
+              }
             }
-          }
 
-          a,
-          span {
-            color: $darkGreen;
+            a,
+            span {
+              color: $darkGreen;
+            }
           }
         }
       }
