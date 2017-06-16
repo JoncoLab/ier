@@ -76,22 +76,28 @@
             </tr>
         </table>
     </section>
-<section class="feedback">
-    <form id="feedback-form" action="sripts/php/feedback.php" method="post">
-        <fieldset>
-            <legend>З'вязатися з адміністрацією</legend>
-            <label for="name">Ваше ім'я та прізвище</label>
-            <input id="name" type="text" name="name" required placeholder="Ваше ім'я та прізвище">
-            <label for="email">Ваша контактна електронна пошта</label>
-            <input id="email" type="email" name="email" required placeholder="example: @ier.com">
-            <label for="message">Ваше повідомлення</label>
-            <textarea rows="15" cols="40" id="message" required></textarea>
-            <fieldset class="form-buttons">
-                <label for="submit">Надіслати</label>
-                <input type="submit" id="submit">
-                <label for="reset">Очистити</label>
-                <input type="reset" id="reset">
-            </fieldset>
+    <section class="feedback">
+    <form id="feedback-form" action="scripts/php/feedback.php" method="post">
+        <fieldset class="form-inputs">
+            <legend>З'вязатися з адміністрацією:</legend>
+            <label for="name">
+                <span>Ваше ім'я та прізвище:</span>
+                <input id="name" type="text" name="name" required placeholder="Ваше ім'я та прізвище">
+            </label>
+            <label for="email">
+                <span>Ваша контактна електронна пошта:</span>
+                <input id="email" type="email" name="email" required placeholder="example@ier.com">
+            </label>
+            <label for="message">
+                <span>Ваше повідомлення:</span>
+                <textarea rows="5" cols="40" id="message" required></textarea>
+            </label>
+        </fieldset>
+        <fieldset class="form-buttons">
+            <input type="submit" id="submit">
+            <label for="submit">Надіслати</label>
+            <input type="reset" id="reset">
+            <label for="reset">Очистити</label>
         </fieldset>
     </form>
 </section>

@@ -2,7 +2,7 @@ $line: 10px;
 $time: 0.3s;
 
 $blue: #6da8d7;
-$darkBlue: #6b39ff;
+$darkBlue: #3324bb;
 $darkGreen: #008700;
 $green: #00cd00;
 $yellow: #ebec06;
@@ -35,5 +35,32 @@ $darkYellow: #edcb00;
       color: transparentize($color, 0.5);
     }
     box-shadow: 0 0 0 $line / 2 transparentize($color, 0.8);
+  }
+}
+
+@mixin buttonVarial($color: $blue) {
+  display: inline-block;
+  background: {
+    image: linear-gradient(1deg * random(360), lighten($color, 10%), darken($color, 10%));
+  }
+  border: {
+    radius: $line;
+  }
+  font: {
+    weight: bold;
+  }
+  opacity: 0.8;
+  padding: $line;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus,
+  &:active {
+    background: {
+      image: linear-gradient(1deg * random(360), darken($color, 10%), lighten($color, 10%));
+    }
   }
 }
