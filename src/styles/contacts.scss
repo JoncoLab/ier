@@ -6,121 +6,21 @@ body {
   margin: 0;
 }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-.contacts-table {
-  width: 50%;
-  float: left;
-  margin-left: -100px;
+  .contacts-table {
+    justify-content: flex-start;
+    
+  }
 
-  table {
-    border-collapse: collapse;
-
-    caption {
-      width: 645px;
-      text-align: left;
-      border: {
-        left: $line solid desaturate($green, 20);
-      }
-      font: {
-        size: $line * 2;
-        weight: bold;
-      }
-      padding: $line * 1.5 $line;
-      background: {
-        color: $darkYellow;
-      }
-    }
-
-    th,
-    td {
-      padding: $line;
-    }
-
-    th {
-      width: 170px;
-      text-align: left;
-      border: {
-        right: 5px solid $darkYellow;
-      }
-    }
+  .feedback {
+    justify-content: flex-end;
   }
 }
 
-.feedback {
-  float: right;
-  width: 50%;
 
-  fieldset {
-    border: none;
 
-    legend {
-      width: 645px;
-      text-align: left;
-      border: {
-        right: $line solid $darkYellow;
-      }
-      font: {
-        size: $line * 2;
-        weight: bold;
-      }
-      padding: $line * 1.5 $line;
-      margin-left: -$line * 1.5;
-      background: {
-        color: desaturate($green, 20);
-      }
-    }
-
-    .wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      input {
-        padding: $line * 1.5 $line;
-        width: 250px;
-        margin: $line 0;
-        border: {
-          style: solid;
-          width: 3px;
-          color: lightgray;
-          radius: $line;
-        }
-        transition: $time;
-      }
-      input:focus {
-        border: {
-          style: solid;
-          width: 3px;
-          color: desaturate($green, 25);
-        }
-        box-shadow: 0 0 5px 2px desaturate($green, 20);
-        background-color: transparentize($yellow, 0.6);
-        outline: none;
-      }
-
-      .feedback-item {
-        flex-grow: 1;
-        align-self: stretch;
-      }
-
-      .feedback-reset {
-
-        label {
-          bottom: 0;
-          right: 50px;
-        }
-      }
-
-      input[type="submit"],
-      input[type="reset"] {
-        display: none;
-      }
-    }
-  }
-}
 

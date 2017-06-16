@@ -79,29 +79,19 @@
 <section class="feedback">
     <form id="feedback-form" action="sripts/php/feedback.php" method="post">
         <fieldset>
-            <legend>З'вязатися з адміністрацією:</legend>
-            <div class="wrapper">
-            <div class="feedback-item">
-            <label for="name">Ваше ім'я та прізвище:</label><br>
+            <legend>З'вязатися з адміністрацією</legend>
+            <label for="name">Ваше ім'я та прізвище</label>
             <input id="name" type="text" name="name" required placeholder="Ваше ім'я та прізвище">
-            </div>
-            <div class="feedback-item">
-            <label for="email">Ваша контактна електронна пошта:</label><br>
+            <label for="email">Ваша контактна електронна пошта</label>
             <input id="email" type="email" name="email" required placeholder="example: @ier.com">
-            </div>
-            <div class="feedback-item">
-            <label for="message">Ваше повідомлення:</label><br>
+            <label for="message">Ваше повідомлення</label>
             <textarea rows="15" cols="40" id="message" required></textarea>
-            </div>
-            <div class="feedback-submit">
-            <label for="submit">Надіслати</label><br>
-            <input type="submit" id="submit">
-            </div>
-            <div class="feedback-reset">
-            <label for="reset">Очистити</label>
-            <input type="reset" id="reset">
-            </div>
-            </div>
+            <fieldset class="form-buttons">
+                <label for="submit">Надіслати</label>
+                <input type="submit" id="submit">
+                <label for="reset">Очистити</label>
+                <input type="reset" id="reset">
+            </fieldset>
         </fieldset>
     </form>
 </section>
