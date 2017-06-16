@@ -17,61 +17,61 @@
         <table>
             <caption>Деканат факультету міжнародних відносин:</caption>
             <tr>
-                <th>Телефон: </th>
+                <th>Телефон:</th>
                 <td>+38 (03122) 3-33-41</td>
             </tr>
             <tr>
-                <th>E-mail: </th>
+                <th>E-mail:</th>
                 <td>official@uzhnu.edu.ua</td>
             </tr>
             <tr>
-                <th>Адреса: </th>
+                <th>Адреса:</th>
                 <td>м.Ужгород, вул.Університетська 14, фуд.510</td>
             </tr>
             <tr>
-                <th>Поштовий індекс: </th>
+                <th>Поштовий індекc:</th>
                 <td>88000</td>
             </tr>
         </table>
         <table>
             <caption>Ректорат УжНу:</caption>
             <tr>
-                <th>Телефон: </th>
+                <th>Телефон:</th>
                 <td>+38 (03122) 3-33-41</td>
             </tr>
             <tr>
-                <th>E-mail: </th>
+                <th>E-mail:</th>
                 <td>official@uzhnu.edu.ua</td>
             </tr>
             <tr>
-                <th>Адреса: </th>
+                <th>Адреса:</th>
                 <td>Україна, Закарпатська обл., м.Ужгород, пл.Народна 3</td>
             </tr>
             <tr>
-                <th>Факс: </th>
+                <th>Факс:</th>
                 <td>+38 (03122) 3-42-02</td>
             </tr>
             <tr>
-                <th>Поштовий індекс: </th>
+                <th>Поштовий індекс:</th>
                 <td>88000</td>
             </tr>
         </table>
         <table>
             <caption>Приймальна комісія УжНу:</caption>
             <tr>
-                <th>Телефон: </th>
+                <th>Телефон:</th>
                 <td>+38 (03122) 64-30-84, 066-571-62-40, 096-123-89-67</td>
             </tr>
             <tr>
-                <th>E-mail: </th>
+                <th>E-mail:</th>
                 <td>admission@uzhnu.edu.ua</td>
             </tr>
             <tr>
-                <th>Адреса: </th>
+                <th>Адреса:</th>
                 <td>Україна, Закрпатська обл., м.Ужгород, вул.Університетська 14, кімн.228</td>
             </tr>
             <tr>
-                <th>Поштовий індекс: </th>
+                <th>Поштовий індекс:</th>
                 <td>88000</td>
             </tr>
         </table>
@@ -79,17 +79,29 @@
 <section class="feedback">
     <form id="feedback-form" action="sripts/php/feedback.php" method="post">
         <fieldset>
-            <legend>З'вязатися з адміністрацією</legend>
-            <label for="name">Ваше ім'я та прізвище</label>
+            <legend>З'вязатися з адміністрацією:</legend>
+            <div class="wrapper">
+            <div class="feedback-item">
+            <label for="name">Ваше ім'я та прізвище:</label><br>
             <input id="name" type="text" name="name" required placeholder="Ваше ім'я та прізвище">
-            <label for="email">Ваша контактна електронна пошта</label>
+            </div>
+            <div class="feedback-item">
+            <label for="email">Ваша контактна електронна пошта:</label><br>
             <input id="email" type="email" name="email" required placeholder="example: @ier.com">
-            <label for="message">Ваше повідомлення</label>
-            <textarea rows="15" cols="70" id="message" required></textarea>
-            <label for="submit">Надіслати</label>
+            </div>
+            <div class="feedback-item">
+            <label for="message">Ваше повідомлення:</label><br>
+            <textarea rows="15" cols="40" id="message" required></textarea>
+            </div>
+            <div class="feedback-submit">
+            <label for="submit">Надіслати</label><br>
             <input type="submit" id="submit">
+            </div>
+            <div class="feedback-reset">
             <label for="reset">Очистити</label>
             <input type="reset" id="reset">
+            </div>
+            </div>
         </fieldset>
     </form>
 </section>

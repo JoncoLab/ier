@@ -13,15 +13,19 @@ body {
 }
 
 .contacts-table {
+  width: 50%;
   float: left;
-  margin-left: 0;
+  margin-left: -100px;
 
   table {
     border-collapse: collapse;
 
     caption {
-      width:
+      width: 645px;
       text-align: left;
+      border: {
+        left: $line solid desaturate($green, 20);
+      }
       font: {
         size: $line * 2;
         weight: bold;
@@ -38,8 +42,10 @@ body {
     }
 
     th {
+      width: 170px;
+      text-align: left;
       border: {
-        right: 2px solid $darkYellow;
+        right: 5px solid $darkYellow;
       }
     }
   }
@@ -47,5 +53,74 @@ body {
 
 .feedback {
   float: right;
+  width: 50%;
+
+  fieldset {
+    border: none;
+
+    legend {
+      width: 645px;
+      text-align: left;
+      border: {
+        right: $line solid $darkYellow;
+      }
+      font: {
+        size: $line * 2;
+        weight: bold;
+      }
+      padding: $line * 1.5 $line;
+      margin-left: -$line * 1.5;
+      background: {
+        color: desaturate($green, 20);
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      input {
+        padding: $line * 1.5 $line;
+        width: 250px;
+        margin: $line 0;
+        border: {
+          style: solid;
+          width: 3px;
+          color: lightgray;
+          radius: $line;
+        }
+        transition: $time;
+      }
+      input:focus {
+        border: {
+          style: solid;
+          width: 3px;
+          color: desaturate($green, 25);
+        }
+        box-shadow: 0 0 5px 2px desaturate($green, 20);
+        background-color: transparentize($yellow, 0.6);
+        outline: none;
+      }
+
+      .feedback-item {
+        flex-grow: 1;
+        align-self: stretch;
+      }
+
+      .feedback-reset {
+
+        label {
+          bottom: 0;
+          right: 50px;
+        }
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        display: none;
+      }
+    }
+  }
 }
 
