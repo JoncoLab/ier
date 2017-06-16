@@ -12,7 +12,7 @@ body {
   #up-button {
     @include button($darkYellow);
     position: fixed;
-    bottom: $line * 10;
+    bottom: 40%;
     right: $line / 2;
     width: $line * 5;
     height: $line * 5;
@@ -304,6 +304,10 @@ body {
         }
       }
     }
+  }
+
+  main {
+    padding: 0 $line * 10 0;
   }
 
   footer {
