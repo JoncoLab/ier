@@ -1,0 +1,20 @@
+@import "templates/variables";
+
+.contacts-table {
+  table {
+    border: {
+      collapse: collapse;
+    }
+    tr,
+    th {
+      padding: $line;
+      border: {
+        width: 1px;
+        style: solid;
+        color: black;
+        radius: $line;
+      }
+      text-align: center;
+    }
+  }
+}
