@@ -49,16 +49,23 @@ body {
     nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: flex-start;
       width: 100%;
       height: 10%;
 
       button {
         flex-basis: 15%;
+        margin: 0 0 0 $line;
         @include button($green);
+        border: {
+          radius: 0;
+        }
 
         &.current {
           @include button($darkYellow);
+          border: {
+            radius: 0;
+          }
         }
       }
     }
@@ -73,6 +80,14 @@ body {
           collapse: collapse;
         }
         margin: $line;
+
+        caption {
+          font: {
+            size: $line * 2;
+            weight: bold;
+          }
+          color: $darkYellow;
+        }
 
         tr {
 
@@ -91,6 +106,16 @@ body {
             }
             border: $line / 5 solid transparentize($yellow, 0.5);
             padding: $line / 2;
+
+            &:last-of-type {
+              border-right: none;
+            }
+          }
+
+          &:last-of-type {
+            td {
+              border-bottom: none;
+            }
           }
         }
       }
@@ -103,6 +128,7 @@ body {
 
   header {
     padding: $line / 2;
+    margin: 0 0 $line / 2;
     display: flex;
     align-items: flex-end;
 
