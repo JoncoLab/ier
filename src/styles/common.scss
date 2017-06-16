@@ -27,31 +27,46 @@ body {
     }
 
     .main-menu {
-      height: $line * 3;
+      height: $line * 5;
       flex-grow: 1;
+      border: {
+        top: $line * 0.3 solid $darkYellow;
+      }
 
       .menu {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 0;
-        margin: 0;
+        margin: 0 0 0 $line * 20;
         list-style: none;
         height: 100%;
+        border: {
+          top: $line * 0.3 solid $darkBlue;
+        }
 
         .menu-item {
-          padding: 0 $line / 2;
+          padding: 0;
           display: flex;
-          margin: 0 $line * 2;
+          margin: 0 $line;
           transition: {
             duration: $time;
+          }
+          background: {
+            color: transparentize($darkBlue, 0.8);
+          }
+          border: {
+            bottom: {
+              left-radius: $line;
+              right-radius: $line;
+            }
           }
 
           a,
           span {
             flex-grow: 1;
+            padding: 0 $line * 2;
             color: $darkBlue;
             text: {
-              align: center;
               decoration: none;
             }
             font: {
@@ -88,21 +103,67 @@ body {
             }
 
             .drop-down-menu {
-              position: absolute;
-              top: 100%;
-              z-index: 5;
-              left: 0;
-              padding: 0;
+              display: none;
+              transition: {
+                duration: $time;
+              }
+            }
 
-              li {
-                width: auto;
+            &.open {
+              box-shadow: 0 $line / 5 0 0 $darkGreen;
+
+              a,
+              span {
+                color: $darkGreen;
+              }
+
+              .drop-down-menu {
+                display: block;
+                position: absolute;
+                top: 100%;
+                z-index: 5;
+                left: 0;
+                padding: 0;
                 margin: 0;
+                list-style: none;
+                width: 100%;
+              }
+
+              .drop-down-menu-item {
+                margin: 0 0 $line / 10;
+                padding: $line / 2;
+                background: {
+                  color: transparentize($darkGreen, 0.8);
+                }
+                transition: {
+                  duration: $time;
+                }
+
+                a {
+                  justify-content: flex-start;
+                  font: {
+                    size: $line * 1.5;
+                  }
+                }
+
+                &:hover {
+                  background: {
+                    color: transparentize($darkGreen, 0.6);
+                  }
+                }
+              }
+
+              &::after {
+                opacity: 0;
               }
             }
           }
 
           &:hover {
             box-shadow: 0 $line / 5 0 0 $darkGreen;
+            background: {
+              color: transparentize($darkGreen, 0.8);
+            }
 
             &::after {
               border: {
