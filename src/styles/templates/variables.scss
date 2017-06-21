@@ -63,4 +63,36 @@ $darkYellow: #edcb00;
       image: linear-gradient(1deg * random(360), darken($color, 10%), lighten($color, 10%));
     }
   }
+  }
+@mixin textBlock($color: $green) {
+  background: transparentize($color, 0.8);
+  border: $line / 2 solid transparentize($color, 0.6);
+  border-radius: $line;
+
+  h3 {
+    background: transparentize($color, 0.6);
+    margin: -1px 0 0 0;
+    padding: $line / 2 0 $line $line * 2;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 $line $line $line;
+  }
+
+  p:first-of-type {
+    padding: $line;
+  }
+
+  p:first-letter {
+    margin: 0 0 0 $line;
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      padding: $line / 2;
+    }
+  }
 }
