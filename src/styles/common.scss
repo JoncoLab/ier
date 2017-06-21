@@ -386,6 +386,32 @@ body {
 
       table {
         display: inline-table;
+
+        caption {
+          border: {
+            bottom: $line / 5 solid $darkYellow;
+          }
+          font: {
+            weight: bold;
+            size: $line * 2;
+          }
+          color: $yellow;
+          padding: $line / 2;
+        }
+
+        th {
+          border: {
+            right: $line / 5 solid $yellow;
+          }
+          text: {
+            align: right;
+          }
+        }
+
+        th,
+        td {
+          padding: $line / 2;
+        }
       }
     }
 
