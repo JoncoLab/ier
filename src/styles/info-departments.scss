@@ -11,10 +11,24 @@ body {
 main {
 
   h2 {
-
+    padding: $line;
+    background: transparentize($blue, 0.6);
+    margin: 0 0 $line 0;
+    border-radius: $line;
   }
 
-  .department-item {
+  .department-item:nth-of-type(3n + 1) {
     @include textBlock($darkYellow);
+    margin: 0 0 $line;
+  }
+
+  .department-item:nth-of-type(3n + 2) {
+    @include textBlock($green);
+    margin: 0 0 $line;
+  }
+
+  .department-item:nth-of-type(3n + 3) {
+    @include textBlock($blue);
+    margin: 0 0 $line;
   }
 }
