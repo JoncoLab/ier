@@ -380,15 +380,27 @@ body {
       image: linear-gradient(to right, $green, $darkGreen);
     }
 
-    .logo {
-      height: $line * 10;
+    .footer-contacts {
+      flex-grow: 1;
+      text-align: center;
+
+      table {
+        display: inline-table;
+      }
     }
 
-    .developers,
-    .contacts {
+    .footer-developers {
+      flex-grow: 3;
+      text-align: center;
       border: {
-        right: $line / 2 solid $yellow;
+        left: $line / 2 solid $darkYellow;
+        right: $line / 2 solid $darkYellow;
       }
+    }
+
+    .footer-logo {
+      padding: 0 $line * 10;
+      height: $line * 10;
     }
   }
 }

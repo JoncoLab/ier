@@ -2,6 +2,8 @@
 
 html,
 body {
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -11,19 +13,16 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
 
-
   .contacts-table {
     margin-right: $line;
     justify-content: flex-start;
     flex-grow: 5;
-
 
     table {
       width: 100%;
       border: {
         collapse: collapse;
       }
-
 
       caption {
         width: 100%;
@@ -36,17 +35,14 @@ main {
         text-align:  left;
       }
 
-
       caption:first-letter {
         margin-left: $line;
       }
-
 
       th,
       td {
         padding: $line / 2;
       }
-
 
       th {
         border: {
