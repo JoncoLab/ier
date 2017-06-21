@@ -9,6 +9,7 @@ var main = function () {
         scheduleCourseButtons = schedule.find('nav button'),
         scheduleItems = schedule.children('[class$="course"]'),
         showScheduleButton = $('header .show-schedule'),
+        hideScheduleButton = schedule.children('.close'),
         upButton = $('#up-button');
 
     window.onscroll = function () {
@@ -27,6 +28,10 @@ var main = function () {
     showScheduleButton.click(function () {
         schedule.toggleClass('show');
         scheduleItems.hide();
+    });
+
+    hideScheduleButton.click(function () {
+        schedule.removeClass('show');
     });
 
     scheduleCourseButtons.click(function () {

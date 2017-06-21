@@ -133,6 +133,7 @@ body {
       position: absolute;
       top: $line * 2;
       right: $line * 2;
+      padding: $line;
     }
   }
 
@@ -374,12 +375,20 @@ body {
     display: flex;
     justify-content: space-between;
     margin: $line / 2 0 0;
+    padding: $line / 2;
     background: {
       image: linear-gradient(to right, $green, $darkGreen);
     }
 
     .logo {
       height: $line * 10;
+    }
+
+    .developers,
+    .contacts {
+      border: {
+        right: $line / 2 solid $yellow;
+      }
     }
   }
 }
