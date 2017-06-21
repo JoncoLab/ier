@@ -11,14 +11,64 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
 
+
   .contacts-table {
+    margin-right: $line;
     justify-content: flex-start;
     flex-grow: 5;
+
+
+    table {
+      width: 100%;
+      border: {
+        collapse: collapse;
+      }
+
+
+      caption {
+        width: 100%;
+        padding: $line 0;
+        background: $darkYellow;
+        font: {
+          size: $line * 1.5;
+          weight: bold;
+        }
+        text-align:  left;
+      }
+
+
+      caption:first-letter {
+        margin-left: $line;
+      }
+
+
+      th,
+      td {
+        padding: $line / 2;
+      }
+
+
+      th {
+        border: {
+          right: $line / 2 solid $darkYellow;
+        }
+        text: {
+          align:  right;
+        }
+      }
+
+      td {
+        text: {
+          align: left;
+        }
+      }
+    }
   }
 
   .feedback {
     flex-basis: 40%;
     flex-grow: 1;
+    max-width: 650px;
 
     #feedback-form {
 
@@ -86,7 +136,7 @@ main {
               border: {
                 radius: $line / 2;
               }
-              padding: $line / 2;
+              padding: $line;
               border: none;
               outline: none;
             }
@@ -112,6 +162,8 @@ main {
           label {
             @include buttonVarial($blue);
             width: 45%;
+            transition-duration: $time;
+            transition-timing-function: linear;
           }
         }
       }
