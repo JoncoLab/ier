@@ -150,232 +150,150 @@ body {
   }
 
   header {
-    padding: $line / 2;
-    margin: 0 0 $line / 2;
     display: flex;
-    align-items: flex-end;
-
-    .show-schedule {
-      @include button($yellow);
-      position: absolute;
-      top: $line;
-      right: $line * 2;
-      padding: $line * 2;
-      border: {
-        radius: $line;
-      }
-      font: {
-        size: $line * 1.5;
-      }
+    background: {
+      color: transparentize(white, 0.5);
     }
+    padding: 0 0 $line $line;
+    margin: 0 0 $line 0;
+    box-shadow: 0 $line / 5 $line / 2 0 $darkGreen;
 
     .logo {
       height: $line * 15;
     }
 
+    #rss,
+    .link {
+      position: absolute;
+      top: $line;
+    }
+
+    #rss {
+      right: $line * 12.5;
+    }
+
+    .link {
+      display: block;
+      width: $line * 10;
+      right: $line;
+    }
+
     #main-menu {
-      height: $line * 10;
       flex-grow: 1;
-      border: {
-        top: $line * 0.3 solid $darkYellow;
-      }
-      transition: {
-        duration: $time;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+      align-content: flex-end;
 
-      .menu {
-        display: flex;
-        justify-content: flex-start;
-        padding: 0;
-        margin: 0 0 0 $line * 20;
-        list-style: none;
-        height: 100%;
-        border: {
-          top: $line * 0.3 solid $darkBlue;
+      .menu-item {
+        display: block;
+        position: relative;
+        padding: $line;
+        margin: 0 $line / 2 0 0;
+        background: {
+          image: linear-gradient(315deg, $darkGreen $line, white $line, white);
         }
-        z-index: 5;
+        color: $darkGreen;
+        text: {
+          decoration: none;
+          align: center;
+        }
+        font: {
+          size: $line * 2;
+        }
+        transition: {
+          duration: $time / 2;
+          timing-function: linear;
+        }
+        transform: {
+          origin: center;
+        }
 
-        .menu-item {
-          padding: 0;
-          display: flex;
-          margin: 0 $line;
+        strong {
+          display: block;
           transition: {
-            duration: $time;
-          }
-          background: {
-            color: transparentize($darkBlue, 0.8);
-          }
-          border: {
-            bottom: {
-              left-radius: $line;
-              right-radius: $line;
-            }
-          }
-
-          a,
-          span {
-            flex-grow: 1;
-            padding: 0 $line * 2;
-            color: $darkBlue;
-            text: {
-              decoration: none;
-            }
-            font: {
-              weight: bold;
-              size: $line * 2;
-            }
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: {
-              duration: $time;
-            }
-          }
-
-          &.drop-down {
-            cursor: pointer;
-            position: relative;
-
-            &::after {
-              display: block;
-              content: '';
-              border: $line * 1.5 solid transparent;
-              border: {
-                left-color: transparent;
-                right-color: transparent;
-                bottom: none;
-              }
-              position: absolute;
-              top: 100%;
-              left: 38%;
-              transition: {
-                duration: $time;
-              }
-            }
-
-            .drop-down-menu {
-              display: none;
-              transition: {
-                duration: $time;
-              }
-            }
-
-            &.open {
-              box-shadow: 0 $line / 5 0 0 $darkGreen;
-
-              a,
-              span {
-                color: $darkGreen;
-              }
-
-              .drop-down-menu {
-                display: block;
-                position: absolute;
-                top: 100%;
-                z-index: 5;
-                left: 0;
-                padding: 0;
-                margin: 0;
-                list-style: none;
-                width: 100%;
-                border: {
-                  radius: $line;
-                }
-                background: {
-                  image: linear-gradient(to bottom, transparent 2px, white 2px, white);
-                }
-              }
-
-              .drop-down-menu-item {
-                margin: 0 0 $line / 10;
-                padding: $line / 2;
-                background: {
-                  color: transparentize($darkGreen, 0.8);
-                }
-                transition: {
-                  duration: $time;
-                }
-
-                &:first-of-type {
-                  border: {
-                    top: {
-                      right-radius: $line;
-                      left-radius: $line;
-                    }
-                  }
-                }
-
-                &:last-of-type {
-                  border: {
-                    bottom: {
-                      right-radius: $line;
-                      left-radius: $line;
-                    }
-                  }
-                }
-
-                a {
-                  justify-content: flex-start;
-                  font: {
-                    size: $line * 1.5;
-                  }
-                  padding: $line / 2;
-                }
-
-                &:hover {
-                  background: {
-                    color: transparentize($darkGreen, 0.6);
-                  }
-                }
-              }
-
-              &::after {
-                opacity: 0;
-              }
-            }
-          }
-
-          &:hover {
-            box-shadow: 0 $line / 5 0 0 $darkGreen;
-            background: {
-              color: transparentize($darkGreen, 0.8);
-            }
-
-            &::after {
-              border: {
-                top-color: $darkGreen;
-              }
-            }
-
-            a,
-            span {
-              color: $darkGreen;
-            }
+            duration: $time / 2;
           }
         }
-      }
 
-      &.fixed {
-        position: fixed;
-        top: 0;
-        right: 15%;
-        border: none;
-        z-index: 5;
-
-        .menu {
-          justify-content: space-between;
-          border: none;
-          background: white;
-          border: {
-            bottom: {
-              right-radius: $line;
-              left-radius: $line;
-            }
+        .top,
+        .right,
+        .bottom,
+        .left {
+          display: block;
+          transition: {
+            duration: $time / 2;
+            timing-function: linear;
           }
-          z-index: 5;
+          position: absolute;
+          background: {
+            color: $darkGreen;
+          }
+        }
 
-          .menu-item {
-            margin: 0 $line / 5;
+        .top {
+          top: 0;
+          transform: {
+            origin: left;
+          }
+        }
+
+        .bottom {
+          bottom: 0;
+          transform: {
+            origin: right;
+          }
+        }
+
+        .left {
+          left: 0;
+          transform: {
+            origin: top;
+          }
+        }
+
+        .right {
+          right: 0;
+          transform: {
+            origin: bottom;
+          }
+        }
+
+        .left,
+        .right {
+          transform: scaleY(0);
+          height: 100%;
+          width: $line * 0.3;
+          bottom: 0;
+        }
+
+        .top,
+        .bottom {
+          left: 0;
+          height: $line * 0.3;
+          width: 100%;
+        }
+
+        &:hover {
+          background: {
+            image: linear-gradient(140deg, $darkGreen $line, white $line, white);
+          }
+          transform: scaleY(1.2);
+
+          strong {
+            transform: scaleY(0.833);
+            text-shadow: $line / 10 0 0 $green;
+          }
+
+          .top,
+          .bottom {
+            transform: scaleX(0);
+          }
+
+          .right,
+          .left {
+            transform: scaleY(1);
           }
         }
       }
