@@ -399,23 +399,24 @@ body {
       padding: 0 $line * 10 0 $line * 10;
 
       table {
+        color: white;
         display: inline-table;
 
         caption {
           border: {
-            bottom: $line / 5 solid $darkYellow;
+            bottom: $line / 5 solid white;
           }
           font: {
             weight: bold;
             size: $line * 2;
           }
-          color: $darkYellow;
+          color: white;
           padding: $line / 2;
         }
 
         th {
           border: {
-            right: $line / 5 solid $yellow;
+            right: $line / 5 solid white;
           }
           text: {
             align: right;
@@ -435,8 +436,8 @@ body {
       flex-grow: 3;
       text-align: center;
       border: {
-        left: $line / 2 solid $darkYellow;
-        right: $line / 2 solid $darkYellow;
+        left: $line / 2 solid white;
+        right: $line / 2 solid white;
       }
 
       span {

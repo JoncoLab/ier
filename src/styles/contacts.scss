@@ -21,8 +21,9 @@ main {
     table {
       width: 100%;
       border: {
-        collapse: collapse;
+        collapse: separate;
       }
+      box-shadow: $shadow;
 
       caption {
         width: 100%;
@@ -36,6 +37,7 @@ main {
         border-left: $line / 2 solid transparentize($green, 0.4);
       }
 
+
       caption:first-letter {
         margin-left: $line;
       }
@@ -47,7 +49,7 @@ main {
 
       th {
         border: {
-          right: $line / 2 solid transparentize($yellow, 0.5);
+          right: $line / 2 solid transparentize($green, 0.5);
         }
         text: {
           align:  right;
@@ -77,9 +79,6 @@ main {
         padding: 0;
 
         legend {
-          border: {
-            radius: $line;
-          }
           box-shadow: inset 0 0 0 $line / 2 transparentize($darkBlue, 0.6);
           background: {
             color: transparentize($blue, 0.5);
