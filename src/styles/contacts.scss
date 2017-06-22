@@ -27,12 +27,13 @@ main {
       caption {
         width: 100%;
         padding: $line 0;
-        background: $darkYellow;
+        background: transparentize($yellow, 0.4);
         font: {
-          size: $line * 1.5;
+          size: $line * 1.7;
           weight: bold;
         }
         text-align:  left;
+        border-left: $line / 2 solid transparentize($green, 0.4);
       }
 
       caption:first-letter {
@@ -46,7 +47,7 @@ main {
 
       th {
         border: {
-          right: $line / 2 solid $darkYellow;
+          right: $line / 2 solid transparentize($yellow, 0.5);
         }
         text: {
           align:  right;

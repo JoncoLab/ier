@@ -15,6 +15,7 @@ body {
     size: cover;
     position: center;
     blend-mode: overlay;
+    attachment: fixed;
   }
 
   #up-button {
@@ -454,10 +455,9 @@ body {
         transition: $time;
 
         &:hover {
-          border: {
-            left: 3px solid white;
-            right: 3px solid white;
-          }
+          box-shadow:
+                  -3px 0 0 0 #ffffff,
+                  3px 0 0 0 #ffffff;
         }
       }
 
