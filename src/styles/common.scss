@@ -387,6 +387,7 @@ body {
     .footer-contacts {
       flex-grow: 1;
       text-align: center;
+      padding: 0 $line * 10 0 $line * 10;
 
       table {
         display: inline-table;
@@ -420,16 +421,47 @@ body {
     }
 
     .footer-developers {
+      display: flex;
+      flex-direction: column;
       flex-grow: 3;
       text-align: center;
       border: {
         left: $line / 2 solid $darkYellow;
         right: $line / 2 solid $darkYellow;
       }
+
+      span {
+        color: white;
+      }
+
+      a {
+        align-self: center;
+        padding: 0 $line / 2;
+        text-decoration: none;
+        color: white;
+        font: {
+          weight: bold;
+        }
+        margin:  $line / 2 0 $line / 2 0;
+        transition: $time;
+
+        &:hover {
+          border: {
+            left: 3px solid white;
+            right: 3px solid white;
+          }
+        }
+      }
+
+      .jonco-logo {
+        display: block;
+        margin: 0 auto;
+        width: 25%;
+        }
     }
 
     .footer-logo {
-      padding: 0 $line * 10;
+      padding: 0 $line * 15;
       height: $line * 10;
     }
   }
