@@ -388,9 +388,7 @@ body {
     justify-content: space-between;
     margin: $line / 2 0 0;
     padding: $line / 2;
-    background: {
-      image: linear-gradient(to right, $green, $darkGreen);
-    }
+    background: transparent;
     clear: both;
 
     .footer-contacts {
