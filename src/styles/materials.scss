@@ -1,0 +1,142 @@
+@import "templates/variables";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      button {
+        @include button($darkYellow);
+        padding: $line;
+        margin: $line / 2 0 $line * 1.5 $line;
+        border: $line / 2 solid $green;
+        flex-grow: 1;
+        flex-basis: 20%;
+        position: relative;
+        z-index: 0;
+
+        &::after {
+          display: block;
+          content: '';
+          border: $line * 2 solid $green;
+          border: {
+            left-color: transparent;
+            right-color: transparent;
+            bottom: none;
+          }
+          position: absolute;
+          top: 100%;
+          left: 42%;
+          transition: {
+            duration: $time;
+          }
+        }
+
+        &:nth-of-type(4n + 1) {
+          border: {
+            color: $green;
+          }
+
+          &::after {
+            border: {
+              top-color: $green;
+            }
+          }
+        }
+
+        &:nth-of-type(4n + 2) {
+          border: {
+            color: $darkBlue;
+          }
+
+          &::after {
+            border: {
+              top-color: $darkBlue;
+            }
+          }
+        }
+
+        &:nth-of-type(4n + 3) {
+          border: {
+            color: $darkYellow;
+          }
+
+          &::after {
+            border: {
+              top-color: $darkYellow;
+            }
+          }
+        }
+
+        &:nth-of-type(4n + 4) {
+          border: {
+            color: $blue;
+          }
+
+          &::after {
+            border: {
+              top-color: $blue;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-grow: 1;
+
+      section[class^="content"] {
+        transform-origin: left;
+        width: 0;
+        overflow: {
+          x: hidden;
+        }
+        transition: {
+          duration: $time * 2;
+        }
+
+        &:nth-of-type(4n + 1) {
+          box-shadow: inset 0 0 0 $line / 2 $green;
+        }
+
+        &:nth-of-type(4n + 2) {
+          box-shadow: inset 0 0 0 $line / 2 $darkBlue;
+        }
+
+        &:nth-of-type(4n + 3) {
+          box-shadow: inset 0 0 0 $line / 2 $darkYellow;
+        }
+
+        &:nth-of-type(4n + 4) {
+          box-shadow: inset 0 0 0 $line / 2 $blue;
+        }
+
+        &.open {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

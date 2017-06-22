@@ -181,6 +181,7 @@ body {
         border: {
           top: $line * 0.3 solid $darkBlue;
         }
+        z-index: 5;
 
         .menu-item {
           padding: 0;
@@ -347,6 +348,7 @@ body {
         top: 0;
         right: 15%;
         border: none;
+        z-index: 5;
 
         .menu {
           justify-content: space-between;
@@ -358,6 +360,7 @@ body {
               left-radius: $line;
             }
           }
+          z-index: 5;
 
           .menu-item {
             margin: 0 $line / 5;
@@ -379,6 +382,7 @@ body {
     background: {
       image: linear-gradient(to right, $green, $darkGreen);
     }
+    clear: both;
 
     .footer-contacts {
       flex-grow: 1;
