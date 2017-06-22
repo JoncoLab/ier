@@ -470,6 +470,7 @@ body {
     }
 
     .footer-logo {
+      filter: drop-shadow(0px 0px 5px #ffffff);
       padding: 0 $line * 15;
       height: $line * 10;
     }

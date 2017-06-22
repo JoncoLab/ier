@@ -69,8 +69,6 @@ $shadow: $line / 2 $line / 2 $line / 2 0 grey;
 
 @mixin textBlock($color: $green) {
   background: transparentize($color, 0.8);
-  border: $line / 2 solid transparentize($color, 0.6);
-  border-radius: $line;
 
   h3 {
     background: transparentize($color, 0.6);
