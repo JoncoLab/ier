@@ -21,7 +21,7 @@ main {
       x: hidden;
       y: scroll;
     }
-    box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
+    box-shadow: $shadow;
     @include noScroll;
 
     .news-heading {
@@ -68,14 +68,14 @@ main {
       y: scroll;
     }
     @include noScroll;
-    padding: 0 $line 0 0;
+    padding: 0 $line $line 0;
 
     .announcements-heading {
       border-left: $line / 2 solid transparentize($green, 0.4);
       margin: 0;
       padding: $line;
       background: transparentize($yellow, 0.7);
-      box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
+      box-shadow: $shadow;
     }
 
     .announcements-item {
@@ -84,7 +84,7 @@ main {
       margin: $line 0 0 $line * 5;
       background: transparentize($yellow, 0.7);
       border-left: $line / 2 solid transparentize($green, 0.3);
-      box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
+      box-shadow: $shadow;
 
       .announcements-title,
       p {
