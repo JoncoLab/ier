@@ -6,9 +6,14 @@ $darkBlue: #3324bb;
 $darkGreen: #008700;
 $green: #00cd00;
 $yellow: #ebec06;
-$darkYellow: #edcb00;
+$darkYellow: #edb700;
 
 $shadow: $line / 2 $line / 2 $line / 2 0 grey;
+
+@font-face {
+  font-family: Ico;
+  src: url("../../fonts/ico.ttf");
+}
 
 @mixin button($color: $darkYellow) {
   font: {

@@ -125,24 +125,107 @@ body {
           duration: $time * 2;
         }
 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
         &:nth-of-type(4n + 1) {
           box-shadow: inset 0 0 0 $line / 2 $green;
+
+          .download {
+            background: {
+              color: transparentize($green, 0.7);
+            }
+            color: $darkGreen;
+
+            &:hover {
+              background: {
+                color: transparentize($green, 0.5);
+              }
+            }
+          }
         }
 
         &:nth-of-type(4n + 2) {
           box-shadow: inset 0 0 0 $line / 2 $darkBlue;
+
+          .download {
+            background: {
+              color: transparentize($darkBlue, 0.7);
+            }
+            color: darken($darkBlue, 20%);
+
+            &:hover {
+              background: {
+                color: transparentize($darkBlue, 0.5);
+              }
+            }
+          }
         }
 
         &:nth-of-type(4n + 3) {
           box-shadow: inset 0 0 0 $line / 2 $darkYellow;
+
+          .download {
+            background: {
+              color: transparentize($yellow, 0.7);
+            }
+            color: darken($darkYellow, 30%);
+
+            &:hover {
+              background: {
+                color: transparentize($yellow, 0.5);
+              }
+            }
+          }
         }
 
         &:nth-of-type(4n + 4) {
           box-shadow: inset 0 0 0 $line / 2 $blue;
+
+          .download {
+            background: {
+              color: transparentize($blue, 0.7);
+            }
+            color: $darkBlue;
+
+            &:hover {
+              background: {
+                color: transparentize($blue, 0.5);
+              }
+            }
+          }
         }
 
         &.open {
           width: 100%;
+          padding: $line;
+        }
+
+        .download {
+          display: flex;
+          align-items: center;
+          padding: $line / 2;
+          margin: $line / 2;
+          text: {
+            decoration: none;
+          }
+          transition: {
+            duration: $time;
+          }
+
+          .ico {
+            font: {
+              family: Ico;
+              size: $line * 3;
+              weight: bold;
+            }
+            margin: 0 $line / 2 0 0;
+          }
+
+          .name {
+
+          }
         }
       }
     }
