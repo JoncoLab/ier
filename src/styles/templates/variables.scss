@@ -64,6 +64,7 @@ $darkYellow: #edcb00;
     }
   }
   }
+
 @mixin textBlock($color: $green) {
   background: transparentize($color, 0.8);
   border: $line / 2 solid transparentize($color, 0.6);
