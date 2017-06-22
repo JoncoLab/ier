@@ -1,33 +1,21 @@
 <header>
-    <img class="logo" src="images/logo.png" alt="logo">
+    <img class="logo" src="../images/logo.png">
     <nav id="main-menu">
-        <ul class="menu">
-            <li class="menu-item" id="news"><a href="index.html">Головна</a></li>
-            <li class="menu-item"><button class="show-schedule">Розклад</button></li>
-            <li class="menu-item" id="materials"><a href="materials.html">Матеріали</a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <li class="manu-item"><button>Розклад</button></li>
-            <li class="drop-down menu-item" id="info">
-                <span>Інформація</span>
-                <ul class="drop-down-menu">
-                    <li id="info-faculty" class="drop-down-menu-item"><a href="info-faculty.html">Про факультет</a></li>
-                    <li id="info-departments" class="drop-down-menu-item"><a href="info-departments.html">Про кафедри</a></li>
-                    <li id="info-payment" class="drop-down-menu-item"><a href="info-payment.html">Про оплату</a></li>
-                </ul>
-            </li>
-=======
-            <li id="info-faculty" class="menu-item"><a href="info-faculty.html">Про факультет</a></li>
-            <li id="info-departments" class="menu-item"><a href="info-departments.html">Про кафедри</a></li>
-            <li id="info-payment" class="menu-item"><a href="info-payment.html">Про оплату</a></li>
->>>>>>> 899f8673c5d5de4797cda6a6b206135a131a5e55
-=======
-            <li id="info-faculty" class="menu-item"><a href="info-faculty.html">Про факультет</a></li>
-            <li id="info-departments" class="menu-item"><a href="info-departments.html">Про кафедри</a></li>
-            <li id="info-payment" class="menu-item"><a href="info-payment.html">Про оплату</a></li>
->>>>>>> 4eaeac5709b498ce4c2f1f7f917376f4bbeea899
-            <li class="menu-item" id="contacts"><a href="contacts.html">Контакти</a></li>
-        </ul>
+        <a class="menu-item"  href="../index.html">Головна</a>
+        <button class="menu-item"  id="show-schedule">Розклад</button>
+        <a class="menu-item" href="../materials.html">Матеріали</a>
+        <a class="menu-item" href="../info-faculty.html">Про факультет</a>
+        <a class="menu-item" href="../info-departments.html">Про кафедри</a>
+        <a class="menu-item" href="../info-payment.html">Про оплату</a>
+        <a class="menu-item" href="../contacts.html">Контакти</a>
     </nav>
-</head
-    er>
+    <a href="http://www.uzhnu.edu.ua/" class="link">Ужгородський національний університет</a>
+    <form id="rss" action="../scripts/php/rss.php" method="post">
+        <label for="rss-email">
+            <strong class="heading"><span class="ico">♠</span>Підписатися на оновлення</strong>
+            <input type="email" id="rss-email" name="rss-email" placeholder="Ваша електронна скринька" title="Пошта, яка буде пыдписана на оновлення">
+            <label for="rss-submit">Підписатися</label>
+            <input type="submit" id="rss-submit">
+        </label>
+    </form>
+</header>
