@@ -14,14 +14,15 @@ body {
   @include noScroll();
 
   main {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      min-height: $line * 5;
 
       button {
         @include button($darkYellow);
@@ -111,27 +112,36 @@ body {
     }
 
     .container {
-      display: flex;
-      flex-grow: 1;
-      box-shadow: $shadow;
       margin: 0 0 $line 0;
+      position: relative;
+      flex-grow: 1;
 
       section[class^="content"] {
-        transform-origin: left;
-        width: 0;
-        overflow: {
-          x: hidden;
-        }
+        transform-origin: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
         transition: {
           duration: $time * 2;
         }
-
+        overflow: {
+          x: scroll;
+          y: hidden;
+        }
+        @include noScroll;
+        background: {
+          color: transparentize(whitesmoke, 0.1);
+        }
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        align-items: flex-start;
+        justify-content: flex-end;
 
         &:nth-of-type(4n + 1) {
-          box-shadow: inset 0 0 0 $line / 2 $green;
+          box-shadow:
+                  $shadow,
+                  inset 0 0 0 $line / 2 $green;
 
           .download {
             background: {
@@ -148,7 +158,9 @@ body {
         }
 
         &:nth-of-type(4n + 2) {
-          box-shadow: inset 0 0 0 $line / 2 $darkBlue;
+          box-shadow:
+                  $shadow,
+                  inset 0 0 0 $line / 2 $darkBlue;
 
           .download {
             background: {
@@ -165,7 +177,9 @@ body {
         }
 
         &:nth-of-type(4n + 3) {
-          box-shadow: inset 0 0 0 $line / 2 $darkYellow;
+          box-shadow:
+                  $shadow,
+                  inset 0 0 0 $line / 2 $darkYellow;
 
           .download {
             background: {
@@ -182,7 +196,9 @@ body {
         }
 
         &:nth-of-type(4n + 4) {
-          box-shadow: inset 0 0 0 $line / 2 $blue;
+          box-shadow:
+                  $shadow,
+                  inset 0 0 0 $line / 2 $blue;
 
           .download {
             background: {
@@ -199,12 +215,13 @@ body {
         }
 
         &.open {
-          width: 100%;
-          padding: $line;
+          transform: scaleX(1);
+          z-index: 5;
         }
 
         .download {
-          display: flex;
+          display: inline-flex;
+          flex-basis: 18%;
           align-items: center;
           padding: $line / 2;
           margin: $line / 2;
@@ -213,6 +230,7 @@ body {
           }
           transition: {
             duration: $time;
+            property: background-color;
           }
 
           .ico {
