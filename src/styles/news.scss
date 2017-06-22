@@ -20,7 +20,9 @@ main {
     overflow: {
       x: hidden;
       y: scroll;
-    };
+    }
+    box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
+    @include noScroll;
 
     .news-heading {
       background: transparentize($green, 0.4);
@@ -59,19 +61,21 @@ main {
   }
 
   .announcements {
-    max-height: 750px
-  ;
+    max-height: 750px;
     flex-basis: 70%;
     overflow: {
       x: hidden;
       y: scroll;
-    };
+    }
+    @include noScroll;
+    padding: 0 $line 0 0;
 
     .announcements-heading {
       border-left: $line / 2 solid transparentize($green, 0.4);
       margin: 0;
       padding: $line;
       background: transparentize($yellow, 0.7);
+      box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
     }
 
     .announcements-item {
@@ -80,6 +84,7 @@ main {
       margin: $line 0 0 $line * 5;
       background: transparentize($yellow, 0.7);
       border-left: $line / 2 solid transparentize($green, 0.3);
+      box-shadow: $line / 2 $line / 2 $line / 2 0 grey;
 
       .announcements-title,
       p {

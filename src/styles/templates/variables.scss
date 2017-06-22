@@ -97,3 +97,33 @@ $darkYellow: #edcb00;
     }
   }
 }
+
+@mixin noScroll() {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@mixin scroll() {
+  &::-webkit-scrollbar {
+    width: 0;
+
+    &-track {
+
+      &-piece {
+
+      }
+    }
+
+    &-thumb {
+
+      &:hover {
+
+      }
+
+      &:active {
+
+      }
+    }
+  }
+}
