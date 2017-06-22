@@ -385,92 +385,15 @@ body {
 
   footer {
     display: flex;
-    justify-content: space-between;
-    margin: $line / 2 0 0;
-    padding: $line / 2;
-    background: transparent;
-    clear: both;
+    justify-content: center;
+    border: 1px solid black;
 
-    .footer-contacts {
-      flex-grow: 1;
-      text-align: center;
-      padding: 0 $line * 10 0 $line * 10;
 
-      table {
-        color: white;
-        display: inline-table;
-
-        caption {
-          border: {
-            bottom: $line / 5 solid white;
-          }
-          font: {
-            weight: bold;
-            size: $line * 2;
-          }
-          color: white;
-          padding: $line / 2;
-        }
-
-        th {
-          border: {
-            right: $line / 5 solid white;
-          }
-          text: {
-            align: right;
-          }
-        }
-
-        th,
-        td {
-          padding: $line / 2;
-        }
-      }
-    }
-
-    .footer-developers {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 3;
-      text-align: center;
-      border: {
-        left: $line / 2 solid white;
-        right: $line / 2 solid white;
-      }
-
-      span {
-        color: white;
-      }
-
-      a {
-        align-self: center;
-        padding: 0 $line / 2;
-        text-decoration: none;
-        color: white;
-        font: {
-          weight: bold;
-        }
-        margin:  $line / 2 0 $line / 2 0;
-        transition: $time;
-
-        &:hover {
-          box-shadow:
-                  -3px 0 0 0 #ffffff,
-                  3px 0 0 0 #ffffff;
-        }
-      }
+    .jonco-link {
 
       .jonco-logo {
-        display: block;
-        margin: 0 auto;
-        width: 25%;
-        }
-    }
-
-    .footer-logo {
-      filter: drop-shadow(0px 0px 5px #ffffff);
-      padding: 0 $line * 15;
-      height: $line * 10;
+        width: 15%;
+      }
     }
   }
 }
