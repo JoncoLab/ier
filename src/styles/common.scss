@@ -391,7 +391,7 @@ body {
     .jonco-link {
       position: relative;
       padding: $line;
-      margin: $line * 2 0;
+      margin: $line * 4 0 $line * 3 0;
       background: transparentize($blue, 0.3);
       box-shadow: $shadow;
       transition: {
@@ -405,17 +405,49 @@ body {
         background: $blue;
 
         &::after {
-          display: block;
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -5px;
-          width: 100%;
-          height: 10px;
-          background-color: white;
-          transform: scale(0);
-          transition: $time;
+          transform: none;
         }
+
+        &::before {
+          transform: scale(0);
+          transform-origin: center;
+          opacity: 0;
+        }
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 5px;
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: $time;
+      }
+
+      &::before {
+        position: absolute;
+        top: -25px;
+        left: 25%;
+        display: block;
+        content: "Created by:";
+        width: 50%;
+        text-align: center;
+        font: {
+          size: $line * 2.1;
+          weight: bold;
+          family: "Times New Roman", sans-serif;
+        }
+        color: black;
+        transition: {
+          duration: $time;
+          timing-function: linear;
+          delay: $time / 2;
+        };
       }
 
       .jonco-logo {
