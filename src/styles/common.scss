@@ -9,6 +9,14 @@ body {
 }
 
 body {
+  background: {
+    color: transparentize(whitesmoke, 0.1);
+    image: url("../images/bg.png");
+    size: cover;
+    position: center;
+    blend-mode: overlay;
+  }
+
   #up-button {
     @include button($darkYellow);
     position: fixed;
@@ -30,13 +38,6 @@ body {
     }
     transform: rotate(-90deg);
     color: $green;
-    background: {
-      color: transparentize(whitesmoke, 0.1);
-      image: url("../images/bg.png");
-      size: cover;
-      position: center;
-      blend-mode: overlay;
-    }
   }
 
   #schedule {
