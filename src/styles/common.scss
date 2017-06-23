@@ -41,6 +41,23 @@ body {
       weight: normal;
     }
     color: $green;
+    transform: translateX(200%);
+
+    &.visible {
+      transform: translateX(0);
+    }
+  }
+
+  #side-menu {
+    transform: translateX(-200%);
+    transition: {
+      duration: $time;
+      timing-function: linear;
+    }
+
+    &.visible {
+      transform: translateX(0);
+    }
   }
 
   #schedule {
@@ -149,12 +166,12 @@ body {
     }
   }
 
-  header {
+  #header {
     display: flex;
     background: {
-      color: transparentize(white, 0.5);
+      color: transparentize(white, 0.3);
     }
-    padding: 0 0 $line $line;
+    padding: $line;
     margin: 0 0 $line 0;
     box-shadow: 0 $line / 5 $line / 2 0 $darkGreen;
 
@@ -170,6 +187,9 @@ body {
 
     #rss {
       right: $line * 12.5;
+      font: {
+        family: Ico;
+      }
     }
 
     .link {
@@ -192,7 +212,7 @@ body {
         padding: $line;
         margin: 0 $line / 2 0 0;
         background: {
-          image: linear-gradient(315deg, $darkGreen $line, white $line, white);
+          image: linear-gradient(135deg, $darkGreen $line, white $line, white);
         }
         color: $darkGreen;
         text: {
@@ -203,7 +223,7 @@ body {
           size: $line * 2;
         }
         transition: {
-          duration: $time / 2;
+          duration: $time;
           timing-function: linear;
         }
         transform: {
@@ -213,7 +233,7 @@ body {
         strong {
           display: block;
           transition: {
-            duration: $time / 2;
+            duration: $time;
           }
         }
 
@@ -223,7 +243,7 @@ body {
         .left {
           display: block;
           transition: {
-            duration: $time / 2;
+            duration: $time;
             timing-function: linear;
           }
           position: absolute;
@@ -277,13 +297,13 @@ body {
 
         &:hover {
           background: {
-            image: linear-gradient(140deg, $darkGreen $line, white $line, white);
+            image: linear-gradient(320deg, $darkGreen $line, white $line, white);
           }
           transform: scaleY(1.2);
 
           strong {
             transform: scaleY(0.833);
-            text-shadow: $line / 10 0 0 $green;
+            color: $green;
           }
 
           .top,
@@ -295,6 +315,10 @@ body {
           .left {
             transform: scaleY(1);
           }
+        }
+
+        &#show-schedule {
+          cursor: pointer;
         }
       }
     }

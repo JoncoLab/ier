@@ -2,21 +2,24 @@
  * Created by Saladin on 13.06.2017.
  */
 var main = function () {
-    var navigationBar = document.getElementById('main-menu'),
-        navigationBarTop = navigationBar.getBoundingClientRect().top + window.pageYOffset,
+    var header = document.getElementById('header'),
+        headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset,
+        sideMenu = $('#side-menu'),
         dropDownButton = $('#info'),
         schedule = $('#schedule'),
         scheduleCourseButtons = schedule.find('nav button'),
         scheduleItems = schedule.children('[class$="course"]'),
-        showScheduleButton = $('header .show-schedule'),
+        showScheduleButton = $('#show-schedule'),
         hideScheduleButton = schedule.children('.close'),
         upButton = $('#up-button');
 
     window.onscroll = function () {
-        if (navigationBar.classList.contains('fixed') && window.pageYOffset < navigationBarTop) {
-            navigationBar.classList.remove('fixed');
-        } else if (window.pageYOffset >= navigationBarTop) {
-            navigationBar.classList.add('fixed');
+        if (sideMenu.is('.visible') || upButton.is('.visible') && window.pageYOffset < headerBottom) {
+            sideMenu.removeClass('visible');
+            upButton.removeClass('visible');
+        } else if (window.pageYOffset >= headerBottom) {
+            sideMenu.addClass('visible');
+            upButton.addClass('visible');
         }
     };
 
