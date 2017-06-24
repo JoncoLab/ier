@@ -4,7 +4,7 @@
 var main = function () {
     var header = document.getElementById('header'),
         headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset,
-        sideMenu = $('#side-menu'),
+        sideMenuButton = $('.side-menu-button'),
         dropDownButton = $('#info'),
         schedule = $('#schedule'),
         scheduleCourseButtons = schedule.find('nav button'),
@@ -14,11 +14,11 @@ var main = function () {
         upButton = $('#up-button');
 
     window.onscroll = function () {
-        if (sideMenu.is('.visible') || upButton.is('.visible') && window.pageYOffset < headerBottom) {
-            sideMenu.removeClass('visible');
+        if ((sideMenuButton.is('.visible') || upButton.is('.visible')) && window.pageYOffset < headerBottom) {
+            sideMenuButton.removeClass('visible');
             upButton.removeClass('visible');
         } else if (window.pageYOffset >= headerBottom) {
-            sideMenu.addClass('visible');
+            sideMenuButton.addClass('visible');
             upButton.addClass('visible');
         }
     };

@@ -19,11 +19,188 @@ body {
   }
   @include noScroll;
 
+  #side-menu {
+    position: fixed;
+    top: $line * 2;
+    left: $line * 2;
+
+    .side-menu-button {
+      position: relative;
+      display: block;
+      width: $line * 5;
+      height: $line * 5;
+      border: {
+        radius: 50%;
+        width: $line / 5;
+        style: solid;
+        color: $yellow;
+        top-color: $blue;
+        right-color: $green;
+        bottom-color: $darkBlue;
+      }
+      background: {
+        color: transparentize($darkYellow, 0.6);
+      }
+      //transform: translateX(-200%);
+      transition: {
+        duration: $time;
+        timing-function: linear;
+      }
+
+      //&.visible {
+      //  transform: translateX(0);
+      //}
+
+      .stick {
+        display: block;
+        position: absolute;
+        left: 20%;
+        width: $line * 3;
+        height: $line / 2;
+        background: {
+          color: transparentize($blue, 0.3);
+        }
+        border: {
+          radius: $line;
+        }
+        transition: {
+          duration: $time;
+          timing-function: linear;
+        }
+
+        &:first-child {
+          top: 35%;
+        }
+
+        &:last-child {
+          bottom: 35%;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 $line / 2 transparentize($darkYellow, 0.6);
+        transform: scale(1.1);
+        background: {
+          color: transparentize($darkYellow, 0.5);
+        }
+        cursor: pointer;
+
+        .stick {
+          left: 22%;
+          background: {
+            color: $blue;
+          }
+
+          &:first-child {
+            transform: rotate(202deg);
+          }
+
+          &:last-child {
+            transform: rotate(-202deg);
+          }
+        }
+      }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      overflow: {
+        x: hidden;
+      }
+
+      .side-menu-item {
+        position: relative;
+        display: block;
+        padding: $line * 1.5 $line * 4;
+        margin: 0 0 $line / 2;
+        font: {
+          size: $line * 2;
+          weight: bold;
+        }
+        color: black;
+        text: {
+          decoration: none;
+        }
+        background: {
+          color: $blue;
+        }
+        //transform: translateX(-200%);
+
+        &::before {
+          display: block;
+          content: "";
+          width: $line / 1.5;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: {
+            color: #3681e4;
+          }
+          transform: translateX(-20px);
+          opacity: 0;
+        }
+
+        &:first-child {
+          margin: $line / 2 0;
+        }
+
+        &:nth-child(2) {
+          cursor: pointer;
+        }
+
+        transition: {
+          duration: $time;
+        }
+
+        &:hover {
+          background: {
+            color: #77aff4;
+          }
+
+          &::before {
+            transform: translateX(0);
+            opacity: 1;
+            transition: {
+              duration: $time;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slide {
+
+    .side-menu-button {
+
+      .stick {
+
+      }
+    }
+
+    &:hover {
+
+      .stick {
+
+      }
+    }
+
+    nav {
+
+      .side-menu-item {
+
+      }
+    }
+  }
+
   #up-button {
     @include button($darkYellow);
     position: fixed;
     bottom: 40%;
-    right: $line / 2;
+    right: $line * 2;
     width: $line * 5;
     height: $line * 5;
     border: {
@@ -42,18 +219,6 @@ body {
     }
     color: $green;
     transform: translateX(200%);
-
-    &.visible {
-      transform: translateX(0);
-    }
-  }
-
-  #side-menu {
-    transform: translateX(-200%);
-    transition: {
-      duration: $time;
-      timing-function: linear;
-    }
 
     &.visible {
       transform: translateX(0);
