@@ -41,15 +41,15 @@ body {
       background: {
         color: transparentize($darkYellow, 0.6);
       }
-      //transform: translateX(-200%);
+      transform: translateX(-200%);
       transition: {
         duration: $time;
         timing-function: linear;
       }
 
-      //&.visible {
-      //  transform: translateX(0);
-      //}
+      &.visible {
+        transform: translateX(0);
+      }
 
       .stick {
         display: block;
@@ -126,7 +126,11 @@ body {
         background: {
           color: $blue;
         }
-        //transform: translateX(-200%);
+        transform: translateX(-100%);
+
+        &.menu-open {
+          transform: none;
+        }
 
         &::before {
           display: block;
@@ -168,30 +172,6 @@ body {
             }
           }
         }
-      }
-    }
-  }
-
-  .slide {
-
-    .side-menu-button {
-
-      .stick {
-
-      }
-    }
-
-    &:hover {
-
-      .stick {
-
-      }
-    }
-
-    nav {
-
-      .side-menu-item {
-
       }
     }
   }

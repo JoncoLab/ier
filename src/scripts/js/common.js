@@ -5,6 +5,7 @@ var main = function () {
     var header = document.getElementById('header'),
         headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset,
         sideMenuButton = $('.side-menu-button'),
+        maksikJqMaster = $('.side-menu-item'),
         dropDownButton = $('#info'),
         schedule = $('#schedule'),
         scheduleCourseButtons = schedule.find('nav button'),
@@ -22,6 +23,11 @@ var main = function () {
             upButton.addClass('visible');
         }
     };
+
+    sideMenuButton.click(function() {
+        $(this).toggleClass('button-open')
+        maksikJqMaster.toggleClass('menu-open');
+    });
 
     dropDownButton.click(function () {
         var currentMenuItem = $(this);
