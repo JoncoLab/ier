@@ -286,6 +286,7 @@ body {
         border: {
           radius: 0;
         }
+        box-shadow: $shadow;
 
         &.current {
           @include button($darkYellow);
