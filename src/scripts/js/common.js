@@ -5,28 +5,30 @@ var main = function () {
     var header = document.getElementById('header'),
         headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset,
         sideMenuButton = $('.side-menu-button'),
-        maksikJqMaster = $('.side-menu-item'),
+        sideMenuItem = $('.side-menu-item'),
         dropDownButton = $('#info'),
         schedule = $('#schedule'),
         scheduleCourseButtons = schedule.find('nav button'),
         scheduleItems = schedule.children('[class$="course"]'),
-        showScheduleButton = $('#show-schedule'),
+        showScheduleButton = $('#side-menu #show-schedule, #main-menu #show-schedule'),
         hideScheduleButton = schedule.children('.close'),
         upButton = $('#up-button');
 
     window.onscroll = function () {
-        if ((sideMenuButton.is('.visible') || upButton.is('.visible')) && window.pageYOffset < headerBottom) {
+        if ((sideMenuButton.is('.visible') || sideMenuItem.is('.visible') || upButton.is('.visible')) && window.pageYOffset < headerBottom) {
             sideMenuButton.removeClass('visible');
+            sideMenuItem.hide();
             upButton.removeClass('visible');
         } else if (window.pageYOffset >= headerBottom) {
             sideMenuButton.addClass('visible');
+            sideMenuItem.show();
             upButton.addClass('visible');
         }
     };
 
     sideMenuButton.click(function() {
-        $(this).toggleClass('button-open')
-        maksikJqMaster.toggleClass('menu-open');
+        $(this).toggleClass('button-active');
+        sideMenuItem.toggleClass('menu-open');
     });
 
     dropDownButton.click(function () {

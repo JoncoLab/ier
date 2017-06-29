@@ -2,12 +2,14 @@
     <img class="logo" src="../images/logo.png">
     <a href="http://www.uzhnu.edu.ua/" class="link">Ужгородський національний університет</a>
     <form id="rss" action="../scripts/php/rss.php" method="post">
-        <label for="rss-email">
-            <strong class="heading"><span class="ico">♠</span>Підписатися на оновлення</strong>
-            <input type="email" id="rss-email" name="rss-email" placeholder="Ваша електронна скринька" title="Пошта, яка буде пыдписана на оновлення">
-            <label for="rss-submit">Підписатися</label>
-            <input type="submit" id="rss-submit">
+        <label class="heading" for="rss-email">
+            <span class="ico">♠</span>Підписатися на оновлення
         </label>
+        <div class="centner">
+            <input type="email" id="rss-email" name="rss-email" value="Ваша електронна пошта" onblur="this.value='Ваша електронна пошта'" onfocus="this.value=''" title="Пошта, яка буде підписана на оновлення">
+            <label for="rss-submit" class="rss-confirm">Підписатися</label>
+        </div>
+            <input type="submit" id="rss-submit">
     </form>
     <nav id="main-menu">
         <a class="menu-item" href="../index.html">
