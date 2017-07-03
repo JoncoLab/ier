@@ -6,35 +6,75 @@ var main = function () {
         headerBottom = header.getBoundingClientRect().bottom + window.pageYOffset,
         sideMenuButton = $('.side-menu-button'),
         sideMenuItem = $('.side-menu-item'),
-        dropDownButton = $('#info'),
         schedule = $('#schedule'),
         scheduleCourseButtons = schedule.find('nav button'),
         scheduleItems = schedule.children('[class$="course"]'),
         showScheduleButton = $('#side-menu #show-schedule, #main-menu #show-schedule'),
-        hideScheduleButton = schedule.children('.close'),
-        upButton = $('#up-button');
+        hideScheduleButton = $('#close-schedule'),
+        upButton = $('#up-button'),
+        rssInput = $('#rss-email');
 
     window.onscroll = function () {
         if ((sideMenuButton.is('.visible') || sideMenuItem.is('.visible') || upButton.is('.visible')) && window.pageYOffset < headerBottom) {
-            sideMenuButton.removeClass('visible');
-            sideMenuItem.hide();
+            sideMenuButton.removeClass('visible').removeClass('button-active');
+            sideMenuItem.removeClass('menu-open');
             upButton.removeClass('visible');
         } else if (window.pageYOffset >= headerBottom) {
             sideMenuButton.addClass('visible');
-            sideMenuItem.show();
             upButton.addClass('visible');
         }
     };
 
+    rssInput.focus(function () {
+        var input = $(this);
+        input.removeAttr('placeholder');
+    });
+
+    rssInput.blur(function () {
+        var input = $(this);
+        input.attr('placeholder', 'Ваша електронна пошта');
+        if (input.val() != '') {
+            input.css({
+                'color': 'black'
+            });
+        }
+    });
+
     sideMenuButton.click(function() {
         $(this).toggleClass('button-active');
         sideMenuItem.toggleClass('menu-open');
+        if ($(this).is('.button-active')) {
+            sideMenuItem.each(function (iterator) {
+                $(this).css('transition-delay', '0.' + (iterator + 1) + 's');
+            });
+        } else {
+            sideMenuItem.each(function (iterator) {
+                $(this).css('transition-delay', '0.' + (7 - iterator) + 's');
+            });
+        }
     });
 
-    dropDownButton.click(function () {
-        var currentMenuItem = $(this);
-        currentMenuItem.toggleClass('open');
-    });
+    sideMenuItem.hover(
+        function () {
+            var current = $(this);
+            current.css({
+                'background-color': '#5294E9',
+                'transition-delay': '0s'
+            });
+        },
+        function () {
+            var current = $(this);
+            current.css({
+                'background-color': '#5db9e9',
+                'transition-delay': '0s'
+            });
+            setTimeout(function () {
+                sideMenuItem.each(function (iterator) {
+                    $(this).css('transition-delay', '0.' + (7 - iterator) + 's');
+                });
+            }, 300);
+        }
+    );
 
     showScheduleButton.click(function () {
         schedule.toggleClass('show');

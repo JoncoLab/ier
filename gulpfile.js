@@ -122,12 +122,10 @@ var gulp = require("gulp"),
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.ftp.html))
         .pipe(connectToFtp.dest(path.ftp.html))
         .pipe(gulp.dest(path.build.html));
     gulp.src(path.admin.src.html)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.admin.ftp.html))
         .pipe(connectToFtp.dest(path.admin.ftp.html))
         .pipe(gulp.dest(path.admin.build.html));
 });
