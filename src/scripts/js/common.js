@@ -12,7 +12,13 @@ var main = function () {
         showScheduleButton = $('#side-menu #show-schedule, #main-menu #show-schedule'),
         hideScheduleButton = $('#close-schedule'),
         upButton = $('#up-button'),
-        rssInput = $('#rss-email');
+        rssInput = $('#rss-email'),
+        newsIt = $('.news-item'),
+        activeNewsImg = $('.active-news-photo'),
+        activeNewsCaption = $('.active-news-title'),
+        activeNewsParagraph = $('.active-news-item p'),
+        activeNewsBtn = $('.active-news-item button'),
+        newsActive = $('.active-news');
 
     window.onscroll = function () {
         if ((sideMenuButton.is('.visible') || sideMenuItem.is('.visible') || upButton.is('.visible')) && window.pageYOffset < headerBottom) {
@@ -24,6 +30,21 @@ var main = function () {
             upButton.addClass('visible');
         }
     };
+
+    newsIt.click(function () {
+        var imgSrc = $(this).children('img').attr('src'),
+            captionTxt = $(this).children('h3').text(),
+            paragraphTxt = $(this).children('p').text();
+
+        newsActive.fadeIn('fast');
+        activeNewsImg.attr('src', imgSrc);
+        activeNewsCaption.text(captionTxt);
+        activeNewsParagraph.text(paragraphTxt);
+    });
+
+    activeNewsBtn.click(function () {
+        newsActive.fadeOut('fast');
+    });
 
     rssInput.focus(function () {
         var input = $(this);
