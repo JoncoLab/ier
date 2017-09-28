@@ -9,7 +9,6 @@ var gulp = require("gulp"),
     rimraf = require("rimraf"),
     jsMinify = require("gulp-minify"),
     zip = require("gulp-zip"),
-    ftp = require("vinyl-ftp"),
     path = {
         src: {
             html: [
@@ -72,17 +71,6 @@ var gulp = require("gulp"),
             docs: 'src/docs/*'
         },
 
-        ftp: {
-            html: '/',
-            css: '/styles/',
-            php: '/scripts/php/',
-            img: '/images/',
-            svg: '/SVG/',
-            fonts: '/fonts/',
-            js: '/scripts/js/',
-            assets: '/assets/'
-        },
-
         admin: {
             src: {
                 html: [
@@ -99,34 +87,19 @@ var gulp = require("gulp"),
                 css: 'build/admin/styles/',
                 php: 'build/admin/scripts/php/',
                 js: 'build/admin/scripts/js/'
-            },
-
-            ftp: {
-                html: '/admin/',
-                css: '/admin/styles/',
-                php: '/admin/scripts/php/',
-                js: '/admin/scripts/js/'
             }
         },
 
         clean: 'build*'
-    },
-    connectToFtp = ftp.create({
-        host: 'joncolab.ftp.ukraine.com.ua',
-        user: 'joncolab_ier',
-        pass: '1234',
-        parallel: 20
-    });
+    };
 
 //Збірка html
 gulp.task('html:build', function () {
     gulp.src(path.src.html)
         .pipe(rigger())
-        .pipe(connectToFtp.dest(path.ftp.html))
         .pipe(gulp.dest(path.build.html));
     gulp.src(path.admin.src.html)
         .pipe(rigger())
-        .pipe(connectToFtp.dest(path.admin.ftp.html))
         .pipe(gulp.dest(path.admin.build.html));
 });
 
@@ -134,8 +107,6 @@ gulp.task('html:build', function () {
 gulp.task('assets:build', function () {
     gulp.src(path.src.assets)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.ftp.assets))
-        .pipe(connectToFtp.dest(path.ftp.assets))
         .pipe(gulp.dest(path.build.assets));
 });
 
@@ -143,37 +114,29 @@ gulp.task('assets:build', function () {
 gulp.task('php:build', function () {
     gulp.src(path.src.php)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.ftp.php))
-        .pipe(connectToFtp.dest(path.ftp.php))
         .pipe(gulp.dest(path.build.php));
     gulp.src(path.admin.src.php)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.admin.ftp.php))
-        .pipe(connectToFtp.dest(path.admin.ftp.php))
         .pipe(gulp.dest(path.admin.build.php));
 });
 
 //Збірка JS
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
-        .pipe(connectToFtp.newer(path.ftp.js))
         .pipe(jsMinify({
             ext: {
                 min: '.js'
             },
             noSource: '*.js'
         }))
-        .pipe(connectToFtp.dest(path.ftp.js))
         .pipe(gulp.dest(path.build.js));
     gulp.src(path.admin.src.js)
-        .pipe(connectToFtp.newer(path.admin.ftp.js))
         .pipe(jsMinify({
             ext: {
                 min: '.js'
             },
             noSource: '*.js'
         }))
-        .pipe(connectToFtp.dest(path.admin.ftp.js))
         .pipe(gulp.dest(path.admin.build.js));
 });
 
@@ -186,8 +149,6 @@ gulp.task('css:build', function () {
             browsers: ['last 40 versions', '> 90%'],
             remove: false
         }))
-        .pipe(connectToFtp.newer(path.ftp.css))
-        .pipe(connectToFtp.dest(path.ftp.css))
         .pipe(gulp.dest(path.build.css));
     gulp.src(path.admin.src.css)
         .pipe(compileSass().on('error', compileSass.logError))
@@ -196,8 +157,6 @@ gulp.task('css:build', function () {
             browsers: ['last 40 versions', '> 90%'],
             remove: false
         }))
-        .pipe(connectToFtp.newer(path.admin.ftp.css))
-        .pipe(connectToFtp.dest(path.admin.ftp.css))
         .pipe(gulp.dest(path.admin.build.css));
 });
 
@@ -205,23 +164,17 @@ gulp.task('css:build', function () {
 gulp.task('img:build', function () {
     gulp.src(path.src.img)
         .pipe(image())
-        .pipe(connectToFtp.newer(path.ftp.img))
-        .pipe(connectToFtp.dest(path.ftp.img))
         .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('svg:build', function () {
     gulp.src(path.src.svg)
-        .pipe(connectToFtp.newer(path.ftp.svg))
-        .pipe(connectToFtp.dest(path.ftp.svg))
         .pipe(gulp.dest(path.build.svg));
 });
 
 //Збірка шрифтів
 gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts)
-        .pipe(connectToFtp.newer(path.ftp.fonts))
-        .pipe(connectToFtp.dest(path.ftp.fonts))
         .pipe(gulp.dest(path.build.fonts));
 });
 
